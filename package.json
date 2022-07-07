@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Kraig Walker<kraig_walker@me.com>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }
