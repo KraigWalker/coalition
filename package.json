@@ -1,15 +1,26 @@
 {
   "name": "vmpkg",
+  "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "nodemon ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Kraig Walker<kraig_walker@me.com>",
   "license": "UNLICENSED",
+  "engines": {
+    "node": "18"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.19",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
   }
 }
