@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express from 'express';
+import { serveMainPage } from './actions/serveMainPage.js';
 
 /**
  *
@@ -15,5 +16,7 @@ function createApp(callback) {
 export function createServer() {
   return createApp((app) => {
     app.use(cors());
+
+    app.get('/', serveMainPage);
   });
 }

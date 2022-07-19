@@ -4,5 +4,5 @@ const server = createServer();
 const port = process.env.PORT || '8080';
 
 server.listen(port, () => {
-  console.log('VMPKG Server listening on port %s, Ctrl+C to quit', port);
+  console.log('MFPKG Server listening on port %s, Ctrl+C to quit', port);
 });
