@@ -10,12 +10,12 @@
     "serve": "nodemon ./build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Kraig Walker<kraig_walker@me.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": "18"
   },
+  "keywords": [],
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
