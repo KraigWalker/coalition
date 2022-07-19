@@ -1,5 +1,6 @@
 node_modules
 .dccache
 .DS_Store
+build
 
 *.log

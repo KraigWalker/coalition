@@ -1,12 +1,13 @@
 {
-  "name": "vmpkg",
+  "name": "mfpkg",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "description": "",
   "scripts": {
-    "start": "npm run serve",
-    "serve": "nodemon ./src/server.js",
+    "build": "rollup -c",
+    "start": "npm run build && npm run serve",
+    "serve": "nodemon ./build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,11 +17,24 @@
     "node": "18"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-url": "^7.0.0",
     "nodemon": "^2.0.19",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "rollup": "^2.77.0",
+    "tempy": "^3.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
