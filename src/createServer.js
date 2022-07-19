@@ -16,6 +16,7 @@ function createApp(callback) {
 export function createServer() {
   return createApp((app) => {
     app.use(cors());
+    app.use('/client', express.static('build/client'));
 
     app.get('/', serveMainPage);
   });

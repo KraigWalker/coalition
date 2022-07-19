@@ -21,7 +21,9 @@ const dependencies = (
         Object.keys(pkg.devDependencies || {})
       )
     : Object.keys(pkg.dependencies)
-).concat('react-dom/server');
+)
+  .concat('react-dom/server')
+  .concat('react-dom/client');
 
 /**
  * The bundle that build the server-side version of the client to render and stream views to the browser.
@@ -43,10 +45,42 @@ const server = {
       emitFiles: false,
     }),
     replace({
+      'process.env.IS_SERVER': true,
+      'process.env.NODE_ENV': "'production'",
       'process.env.BUILD_ID': buildId, //JSON.stringify(buildId),
       preventAssignment: true,
     }),
   ],
 };
 
-export default server;
+/**
+ * The bundle that build the client (browser) version uses with interactivity.
+ */
+const client = {
+  external: builtinModules,
+  input: './src/client/index.js',
+  output: { dir: 'build/client', format: 'es' },
+  preserveEntrySignatures: false,
+  plugins: [
+    manifest.inject({ virtualId: 'entry-manifest' }),
+    babel({ exclude: /node_modules/, babelHelpers: 'bundled', babelrc: true }),
+    json(),
+    resolve(),
+    commonjs(),
+    url({
+      limit: 5 * 1024,
+      publicPath: '/_client/',
+      emitFiles: false,
+    }),
+    replace({
+      'process.env.IS_SERVER': false,
+      'process.env.NODE_ENV': "'production'",
+      'process.env.BUILD_ID': buildId, //JSON.stringify(buildId),
+      preventAssignment: true,
+    }),
+  ],
+};
+
+const config = [server, client];
+
+export default config;

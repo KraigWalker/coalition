@@ -25,6 +25,7 @@ export function MainTemplate({
         </head>
         <body>
           <div id="root">{children}</div>
+          <script type="module" src="./client/index.js" />
         </body>
       </html>
     </>

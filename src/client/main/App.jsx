@@ -3,7 +3,9 @@ import { Loading } from './Loading.jsx';
 
 const Dynamic = lazy(() => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import('./Dynamic.jsx')), 3000);
+    process.env.IS_SERVER
+      ? setTimeout(() => resolve(import('./Dynamic.jsx')), 3000)
+      : resolve(import('./Dynamic.jsx'));
   });
 });
 
