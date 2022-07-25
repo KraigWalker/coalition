@@ -2,5 +2,6 @@
   "files.associations": {
     "*.json": "jsonc"
   },
-  "snyk.features.codeSecurity": false
+  "snyk.features.codeSecurity": true,
+  "snyk.features.codeQuality": false
 }
