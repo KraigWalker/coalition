@@ -470,7 +470,7 @@
     // }
     {
       "packageName": "coalition",
-      "projectFolder": "apps/coalition",
+      "projectFolder": "apps/coalition-server",
       // "reviewCategory": "apps",
       "tags": ["apps"]
     }
