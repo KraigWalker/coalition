@@ -5,6 +5,7 @@ import { noQuery } from './middleware/noQuery.js';
 import { allowQuery } from './middleware/allowQuery.js';
 import { validatePackageName } from './middleware/validatePackageName.js';
 import { validatePackagePathname } from './middleware/validatePackagePathname.js';
+import { validatePackageVersion } from './middleware/validatePackageVersion.js';
 
 /**
  *
@@ -40,17 +41,17 @@ export function createServer() {
           noQuery(),
           validatePackagePathname,
           validatePackageName,
-          validatePackageVersion,
-          serveDirectoryBrowser
+          validatePackageVersion
+          /*serveDirectoryBrowser*/
         );
 
         app.get(
           '*',
           noQuery(),
+          validatePackagePathname,
           validatePackageName,
-          validatePackageName,
-          validatePackageVersion,
-          serveDirectoryBrowser
+          validatePackageVersion
+          /*serveDirectoryBrowser*/
         );
       })
     );
@@ -69,9 +70,9 @@ export function createServer() {
         allowQuery('meta'),
         validatePackagePathname,
         validatePackageName,
-        validatePackageVersion,
-        validateFilename,
-        serveDirectoryMetadata
+        validatePackageVersion
+        /* validateFilename,
+        serveDirectoryMetadata */
       );
 
       app.get(
@@ -79,9 +80,9 @@ export function createServer() {
         allowQuery('meta'),
         validatePackagePathname,
         validatePackageName,
-        validatePackageVersion,
-        validateFilename,
-        serveDirectoryMetadata
+        validatePackageVersion
+        /* validateFilename,
+        serveDirectoryMetadata */
       );
     });
 
@@ -105,10 +106,10 @@ export function createServer() {
       noQuery(),
       validatePackagePathname,
       validatePackageName,
-      validatePackageVersion,
-      validateFilename,
-      findEntry,
-      serveFile
+      validatePackageVersion
+      /* validateFilename*/
+      /* findEntry,
+      serveFile*/
     );
   });
 }
