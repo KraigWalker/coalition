@@ -1,5 +1,5 @@
 {
-  "name": "mfpkg",
+  "name": "coalition",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -37,6 +37,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semver": "^7.3.7",
-    "validate-npm-package-name": "^4.0.0"
+    "validate-npm-package-name": "^4.0.0",
+    "tar-stream": "~2.2.0"
   }
 }
