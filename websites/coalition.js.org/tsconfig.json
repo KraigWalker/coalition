@@ -3,5 +3,8 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "."
+  },
+  "paths": {
+    "@docusaurus/*": ["./node_modules/@docusaurus/core/lib/client/exports/*"]
   }
 }

@@ -26,9 +26,11 @@
   },
   "devDependencies": {
     "@types/react": "18.0.15",
-    "@docusaurus/module-type-aliases": "2.0.0-rc.1",
+    "@docusaurus/module-type-aliases": "~2.0.0-rc.1",
     "@tsconfig/docusaurus": "^1.0.5",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "@docusaurus/theme-classic": "~2.0.0-rc.1",
+    "@types/node": "~18.6.2"
   },
   "browserslist": {
     "production": [
